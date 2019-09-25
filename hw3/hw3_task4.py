@@ -5,7 +5,7 @@
 
 import random
 
-in_arr = [random.randint(-3, 3) for _ in range(3)]
+in_arr = [random.randint(-3, 3) for _ in range(10)]
 print(in_arr)
 
 d = {}
