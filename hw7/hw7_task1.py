@@ -12,7 +12,6 @@ array = [random.randrange(-size, size) for _ in range(13)]
 
 
 def bubble(array):
-    array = array[:]
     n = 1
     while n < len(array):
         swapped = False
@@ -23,11 +22,11 @@ def bubble(array):
         n += 1
         if not swapped:
             break
-    return array
 
 
 print(array)
-print(bubble(array))
+bubble(array)
+print(array)
 
 '''
 [-90, 84, 74, -30, 40, 48, -26, -25, -29, -67, 35, 34, -21]
