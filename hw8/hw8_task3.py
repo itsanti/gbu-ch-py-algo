@@ -8,10 +8,25 @@
 - граф должен храниться в виде списка смежности;
 - генерация графа выполняется в отдельной функции, которая принимает на вход число вершин.
 """
+import random
+
+
+def create_graph(vertex, percent=1.0):
+    assert 0 < percent <= 1, 'wrong percent'
+    graph = {}
+
+    for i in range(vertex):
+        graph[i] = set()
+        count_edge = random.randrange(1, int(vertex * percent))
+        while len(graph[i]) < count_edge:
+            edge = random.randrange(0, vertex)
+            if edge != i:
+                graph[i].add(edge)
+
+    return graph
 
 
 def gen_adj_list(n):
-    import random
     adjacency_list = []
     for vertex in range(n):
         adjacency_list.append(random.sample([v for v in range(n) if vertex != v], k=random.randint(0, n - 1)))
